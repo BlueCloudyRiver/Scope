@@ -50,7 +50,6 @@ while True:
         5.End"""
     )
     choice = input("")
-    print(" Enter a valid number")
 
     if choice == "1":
         add_task()
@@ -71,6 +70,10 @@ while True:
             mark_taskcomplete(tasknum)
         except:
             print("Enter a valid number")
+    elif choice == "5":
+        break
+    else:
+        print("Enter a valid number")
 
 
 
