@@ -46,7 +46,7 @@ while True:
         1.Add Task
         2.Show Tasks
         3.Delete a Task
-        4.Mark a Tak Complete
+        4.Mark a Task Complete
         5.End"""
     )
     choice = input("")
