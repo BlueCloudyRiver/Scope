@@ -1,8 +1,11 @@
 import json
 
 def save_json():
-    with open("todo.txt", "w") as f:
-        json.dump(tasks, f)
+    try:
+        with open("todo.txt", "w") as f:
+            json.dump(tasks, f)
+    except:
+        return None
 
 
 def load_json():
@@ -16,8 +19,10 @@ def load_json():
 tasks = load_json()
 
 def show_tasks() :
+    if not tasks:
+        print("No tasks entered")
     for index, task in enumerate(tasks):
-        print(index + 1, task , "-", task["status"])
+        print(index + 1, task["task"] , "-", task["status"])
 
 def add_task():
     new_task = input("Enter a task. ").strip()
@@ -67,13 +72,11 @@ while True:
     elif choice == "4":
         try:
             tasknum = int(input("Enter the number of task you want to mark as complete. "))
-            mark_taskcomplete(tasknum)
+            mark_taskcomplete(tasknum - 1)
         except:
             print("Enter a valid number")
     elif choice == "5":
         break
     else:
         print("Enter a valid number")
-
-
 
