@@ -21,6 +21,7 @@ tasks = load_json()
 def show_tasks() :
     if not tasks:
         print("No tasks entered")
+        return
     for index, task in enumerate(tasks):
         print(index + 1, task["task"] , "-", task["status"])
 
@@ -47,14 +48,14 @@ def mark_taskcomplete(tasknum : int):
 
 while True:
     print(
-        """Choose an option:(Enter only the number)
-        1.Add Task
-        2.Show Tasks
-        3.Delete a Task
-        4.Mark a Task Complete
-        5.End"""
+        """---Menu---
+1.Add Task
+2.Show Tasks
+3.Delete a Task
+4.Mark a Task Complete
+5.End"""
     )
-    choice = input("")
+    choice = input("Choose an option: ")
 
     if choice == "1":
         add_task()
@@ -70,6 +71,9 @@ while True:
             continue
         delete_task(index - 1)
     elif choice == "4":
+        if not tasks:
+            print("No Tasks yet")
+            continue
         try:
             tasknum = int(input("Enter the number of task you want to mark as complete. "))
             mark_taskcomplete(tasknum - 1)
@@ -79,4 +83,3 @@ while True:
         break
     else:
         print("Enter a valid number")
-
