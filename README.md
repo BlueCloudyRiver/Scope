@@ -19,7 +19,7 @@ A simple CLI Task Manager app built with python
 Clone the repository:
 
 ```bash
-git clone https://github.com/BlueCloudyRiver/PebbleTasks-TasksApp
+git clone https://github.com/BlueCloudyRiver/Scope
 ```
 
 Run the program:
